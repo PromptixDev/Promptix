@@ -18,7 +18,7 @@ mcpServers:
       - run
       - exa
       - --key
-      - f056c70a-8cbc-47ef-bd46-867f0c03e899
+      - "${EXA_API_KEY}"
     timeout: 60000
     serverInstructions: true
   
@@ -54,4 +54,3 @@ endpoints:
       forcePrompt: false
       modelDisplayLabel: "OpenRouter"
       dropParams: ["stop"]
-
