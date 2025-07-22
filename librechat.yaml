@@ -9,19 +9,6 @@ interface:
 
 # MCP Servers Configuration
 mcpServers:
-  # Exa search server
-  exa:
-    command: npx
-    args:
-      - -y
-      - "@smithery/cli@latest"
-      - run
-      - exa
-      - --key
-      - "${EXA_API_KEY}"
-    timeout: 60000
-    serverInstructions: true
-  
   # Context7 server
   context7:
     command: npx
