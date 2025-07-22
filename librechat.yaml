@@ -1,0 +1,57 @@
+version: 1.2.8
+cache: true
+
+# Interface configuration
+interface:
+  # MCP Servers UI configuration
+  mcpServers:
+    placeholder: 'MCP Servers'
+
+# MCP Servers Configuration
+mcpServers:
+  # Exa search server
+  exa:
+    command: npx
+    args:
+      - -y
+      - "@smithery/cli@latest"
+      - run
+      - exa
+      - --key
+      - f056c70a-8cbc-47ef-bd46-867f0c03e899
+    timeout: 60000
+    serverInstructions: true
+  
+  # Context7 server
+  context7:
+    command: npx
+    args:
+      - -y
+      - "@upstash/context7-mcp"
+    timeout: 60000
+    serverInstructions: true
+
+endpoints:
+  custom:
+    - name: "OpenRouter"
+      apiKey: "${OPENROUTER_KEY}"
+      baseURL: "https://openrouter.ai/api/v1"
+      models:
+        default: [
+          "openai/gpt-4o",
+          "openai/gpt-4o-mini",
+          "openai/gpt-4-turbo",
+          "anthropic/claude-3.5-sonnet",
+          "anthropic/claude-3-haiku",
+          "google/gemini-pro-1.5",
+          "meta-llama/llama-3.1-70b-instruct"
+        ]
+        fetch: true
+      titleConvo: true
+      titleModel: "openai/gpt-4o-mini"
+      summarize: false
+      summaryModel: "openai/gpt-4o-mini"
+      forcePrompt: false
+      modelDisplayLabel: "OpenRouter"
+      dropParams: ["stop"]
+
