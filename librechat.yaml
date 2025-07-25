@@ -41,3 +41,202 @@ endpoints:
       forcePrompt: false
       modelDisplayLabel: "OpenRouter"
       dropParams: ["stop"]
+
+    # Groq
+    - name: "Groq"
+      apiKey: "${GROQ_API_KEY}"
+      baseURL: "https://api.groq.com/openai/v1/"
+      models:
+        default: [
+          "llama3-70b-8192",
+          "llama3-8b-8192",
+          "llama2-70b-4096",
+          "mixtral-8x7b-32768",
+          "gemma-7b-it"
+        ]
+        fetch: true
+      titleConvo: true
+      titleModel: "mixtral-8x7b-32768"
+      modelDisplayLabel: "Groq"
+
+    # Mistral AI
+    - name: "Mistral"
+      apiKey: "${MISTRAL_API_KEY}"
+      baseURL: "https://api.mistral.ai/v1"
+      models:
+        default: [
+          "mistral-tiny",
+          "mistral-small",
+          "mistral-medium",
+          "mistral-large-latest"
+        ]
+        fetch: true
+      titleConvo: true
+      titleModel: "mistral-tiny"
+      modelDisplayLabel: "Mistral"
+      dropParams: ["stop", "user", "frequency_penalty", "presence_penalty"]
+
+    # XAI (Grok)
+    - name: "XAI"
+      apiKey: "${XAI_API_KEY}"
+      baseURL: "https://api.x.ai/v1"
+      models:
+        default: [
+          "grok-beta",
+          "grok-vision-beta"
+        ]
+        fetch: true
+      titleConvo: true
+      titleModel: "grok-beta"
+      modelDisplayLabel: "XAI (Grok)"
+
+    # Anyscale
+    - name: "Anyscale"
+      apiKey: "${ANYSCALE_API_KEY}"
+      baseURL: "https://api.endpoints.anyscale.com/v1"
+      models:
+        default: [
+          "meta-llama/Llama-2-7b-chat-hf",
+          "meta-llama/Llama-2-13b-chat-hf",
+          "meta-llama/Llama-2-70b-chat-hf"
+        ]
+        fetch: true
+      titleConvo: true
+      titleModel: "meta-llama/Llama-2-7b-chat-hf"
+      modelDisplayLabel: "Anyscale"
+
+    # Cohere
+    - name: "Cohere"
+      apiKey: "${COHERE_API_KEY}"
+      baseURL: "https://api.cohere.ai/v1"
+      models:
+        default: [
+          "command",
+          "command-light",
+          "command-nightly",
+          "command-r",
+          "command-r-plus"
+        ]
+        fetch: true
+      titleConvo: true
+      titleModel: "command"
+      modelDisplayLabel: "Cohere"
+      forcePrompt: true
+
+    # DeepSeek
+    - name: "DeepSeek"
+      apiKey: "${DEEPSEEK_API_KEY}"
+      baseURL: "https://api.deepseek.com/v1"
+      models:
+        default: [
+          "deepseek-chat",
+          "deepseek-coder"
+        ]
+        fetch: true
+      titleConvo: true
+      titleModel: "deepseek-chat"
+      modelDisplayLabel: "DeepSeek"
+
+    # Fireworks AI
+    - name: "Fireworks"
+      apiKey: "${FIREWORKS_API_KEY}"
+      baseURL: "https://api.fireworks.ai/inference/v1"
+      models:
+        default: [
+          "accounts/fireworks/models/llama-v2-7b-chat",
+          "accounts/fireworks/models/llama-v2-13b-chat",
+          "accounts/fireworks/models/llama-v2-70b-chat"
+        ]
+        fetch: true
+      titleConvo: true
+      titleModel: "accounts/fireworks/models/llama-v2-7b-chat"
+      modelDisplayLabel: "Fireworks"
+
+    # Hugging Face
+    - name: "HuggingFace"
+      apiKey: "${HUGGINGFACE_TOKEN}"
+      baseURL: "https://api-inference.huggingface.co/models"
+      models:
+        default: [
+          "microsoft/DialoGPT-medium",
+          "microsoft/DialoGPT-large",
+          "facebook/blenderbot-400M-distill"
+        ]
+        fetch: false
+      titleConvo: true
+      titleModel: "microsoft/DialoGPT-medium"
+      modelDisplayLabel: "Hugging Face"
+
+    # Perplexity
+    - name: "Perplexity"
+      apiKey: "${PERPLEXITY_API_KEY}"
+      baseURL: "https://api.perplexity.ai"
+      models:
+        default: [
+          "llama-3.1-sonar-small-128k-online",
+          "llama-3.1-sonar-large-128k-online",
+          "llama-3.1-sonar-huge-128k-online"
+        ]
+        fetch: true
+      titleConvo: true
+      titleModel: "llama-3.1-sonar-small-128k-online"
+      modelDisplayLabel: "Perplexity"
+
+    # ShuttleAI
+    - name: "ShuttleAI"
+      apiKey: "${SHUTTLEAI_API_KEY}"
+      baseURL: "https://api.shuttleai.app/v1"
+      models:
+        default: [
+          "shuttle-2-turbo",
+          "shuttle-turbo"
+        ]
+        fetch: true
+      titleConvo: true
+      titleModel: "shuttle-2-turbo"
+      modelDisplayLabel: "ShuttleAI"
+
+    # Together AI
+    - name: "TogetherAI"
+      apiKey: "${TOGETHERAI_API_KEY}"
+      baseURL: "https://api.together.xyz/v1"
+      models:
+        default: [
+          "togethercomputer/RedPajama-INCITE-Chat-3B-v1",
+          "togethercomputer/RedPajama-INCITE-Chat-7B-v1",
+          "meta-llama/Llama-2-7b-chat-hf",
+          "meta-llama/Llama-2-13b-chat-hf"
+        ]
+        fetch: true
+      titleConvo: true
+      titleModel: "togethercomputer/RedPajama-INCITE-Chat-3B-v1"
+      modelDisplayLabel: "Together AI"
+
+    # Unify
+    - name: "Unify"
+      apiKey: "${UNIFY_API_KEY}"
+      baseURL: "https://api.unify.ai/v0"
+      models:
+        default: [
+          "gpt-3.5-turbo@openai",
+          "gpt-4@openai",
+          "claude-3-haiku@anthropic"
+        ]
+        fetch: true
+      titleConvo: true
+      titleModel: "gpt-3.5-turbo@openai"
+      modelDisplayLabel: "Unify"
+
+    # Databricks
+    - name: "Databricks"  
+      apiKey: "${DATABRICKS_API_KEY}"
+      baseURL: "https://dbc-dp-1234567890123456.cloud.databricks.com/serving-endpoints"
+      models:
+        default: [
+          "databricks-dbrx-instruct",
+          "databricks-meta-llama-3-70b-instruct"
+        ]
+        fetch: false
+      titleConvo: true
+      titleModel: "databricks-dbrx-instruct"
+      modelDisplayLabel: "Databricks"
