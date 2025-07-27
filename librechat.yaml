@@ -18,6 +18,17 @@ mcpServers:
     timeout: 60000
     serverInstructions: true
 
+  # Firecrawl MCP server
+  firecrawl:
+    command: npx
+    args:
+      - -y
+      - "firecrawl-mcp"
+    env:
+      FIRECRAWL_API_KEY: "${FIRECRAWL_API_KEY}"
+    timeout: 60000
+    serverInstructions: true
+
 endpoints:
   custom:
     - name: "OpenRouter"
