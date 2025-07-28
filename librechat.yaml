@@ -29,6 +29,63 @@ mcpServers:
     timeout: 60000
     serverInstructions: true
 
+  # ChatPDF MCP server
+  chatpdf:
+    command: npx
+    args:
+      - -y
+      - "@mcp/chatpdf-mcp"
+    env:
+      CHATPDF_API_KEY: "${CHATPDF_API_KEY}"
+    timeout: 60000
+    serverInstructions: true
+
+  # MultiAgent MCP server
+  multiagent:
+    command: npx
+    args:
+      - -y
+      - "@mcp/multiagent-mcp"
+    timeout: 60000
+    serverInstructions: true
+
+  # LangChain Tool MCP (ToolUse)
+  tooluse:
+    command: npx
+    args:
+      - -y
+      - "@mcp/tooluse-mcp"
+    timeout: 60000
+    serverInstructions: true
+
+  # TableAgent MCP (CSV/XLS)
+  tableagent:
+    command: npx
+    args:
+      - -y
+      - "@mcp/tableagent-mcp"
+    timeout: 60000
+    serverInstructions: true
+
+  # JSONMode MCP (for structured JSON outputs like configs, prompts, schemas)
+  jsonmode:
+    command: npx
+    args:
+      - -y
+      - "@mcp/jsonmode-mcp"
+    timeout: 60000
+    serverInstructions: true
+
+  # Retrieval / Knowledgebase RAG MCP
+  retrieval:
+    command: npx
+    args:
+      - -y
+      - "@mcp/retrieval-mcp"
+    timeout: 60000
+    serverInstructions: true
+
+
 endpoints:
   custom:
     - name: "OpenRouter"
