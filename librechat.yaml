@@ -43,7 +43,7 @@ mcpServers:
     command: npx
     args:
       - -y
-      - "@mcp/elevenlabs-mcp"  # seulement si ce package existe ou tu le crées
+      - "elevenlabs-mcp"  # seulement si ce package existe ou tu le crées
     env:
       ELEVENLABS_API_KEY: "${ELEVENLABS_API_KEY}"
     timeout: 60000
@@ -52,7 +52,7 @@ mcpServers:
 
   # Chart MCP server (AntV)
   mcp-server-chart:
-    command: cmd
+    command: npx
     args:
       - -y
       - "@antv/mcp-server-chart"
