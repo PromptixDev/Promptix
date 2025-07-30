@@ -40,23 +40,20 @@ mcpServers:
 
   # ElevenLabs MCP server
   elevenlabs:
-    command: docker
+    command: npx
     args:
-      - run
-      - -i
-      - --rm
-      - -e
-      - ELEVENLABS_API_KEY
-      - mcp/elevenlabs
+      - -y
+      - "@mcp/elevenlabs-mcp"  # seulement si ce package existe ou tu le crées
     env:
       ELEVENLABS_API_KEY: "${ELEVENLABS_API_KEY}"
+    timeout: 60000
+    serverInstructions: true
+
 
   # Chart MCP server (AntV)
   mcp-server-chart:
     command: cmd
     args:
-      - /c
-      - npx
       - -y
       - "@antv/mcp-server-chart"
     timeout: 60000
