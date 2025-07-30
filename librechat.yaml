@@ -68,26 +68,15 @@ mcpServers:
     timeout: 60000
     serverInstructions: true
 
-  # Exa MCP server
-  exa:
+  google-maps:
     command: npx
     args:
       - -y
-      - mcp-remote
-      - "https://mcp.exa.ai/mcp?exaApiKey=${EXA_API_KEY}"
+      - "@cablate/mcp-google-map"
+    env:
+      GOOGLE_MAPS_API_KEY: "${GOOGLE_MAPS_API_KEY}"
     timeout: 60000
-    serverInstructions: true
-
-  # OPGG MCP (Linux/macOS)
-  opgg-mcp:
-    command: npx
-    args:
-      - -y
-      - supergateway
-      - --streamableHttp
-      - https://mcp-api.op.gg/mcp
-    timeout: 60000
-    serverInstructions: true
+    serverInstructions: true  
 
 
 endpoints:
