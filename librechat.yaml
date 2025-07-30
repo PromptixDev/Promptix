@@ -40,7 +40,7 @@ mcpServers:
 
   # ElevenLabs MCP server
   elevenlabs:
-    command: npx
+    command: uvx
     args:
       - -y
       - "elevenlabs-mcp"  # seulement si ce package existe ou tu le crées
@@ -48,37 +48,18 @@ mcpServers:
       ELEVENLABS_API_KEY: "${ELEVENLABS_API_KEY}"
     timeout: 60000
     serverInstructions: true
-
-
-  # Chart MCP server (AntV)
-  mcp-server-chart:
+  
+  # RunwayML MCP server
+  runwayml:
     command: npx
     args:
       - -y
-      - "@antv/mcp-server-chart"
-    timeout: 60000
-    serverInstructions: true
-
-  # CoinGecko MCP server (remote SSE)
-  coingecko_mcp:
-    command: npx
-    args:
-      - mcp-remote
-      - https://mcp.api.coingecko.com/sse
-    timeout: 60000
-    serverInstructions: true
-
-  google-maps:
-    command: npx
-    args:
-      - -y
-      - "@cablate/mcp-google-map"
+      - "runwayml-mcp"
     env:
-      GOOGLE_MAPS_API_KEY: "${GOOGLE_MAPS_API_KEY}"
+      RUNWAY_API_KEY: "${RUNWAY_API_KEY}"
     timeout: 60000
-    serverInstructions: true  
-
-
+    serverInstructions: true
+ 
 endpoints:
   custom:
     - name: "OpenRouter"
