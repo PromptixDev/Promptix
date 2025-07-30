@@ -29,62 +29,6 @@ mcpServers:
     timeout: 60000
     serverInstructions: true
 
-  # ChatPDF MCP server
-  chatpdf:
-    command: npx
-    args:
-      - -y
-      - "@mcp/chatpdf-mcp"
-    env:
-      CHATPDF_API_KEY: "${CHATPDF_API_KEY}"
-    timeout: 60000
-    serverInstructions: true
-
-  # MultiAgent MCP server
-  multiagent:
-    command: npx
-    args:
-      - -y
-      - "@mcp/multiagent-mcp"
-    timeout: 60000
-    serverInstructions: true
-
-  # LangChain Tool MCP (ToolUse)
-  tooluse:
-    command: npx
-    args:
-      - -y
-      - "@mcp/tooluse-mcp"
-    timeout: 60000
-    serverInstructions: true
-
-  # TableAgent MCP (CSV/XLS)
-  tableagent:
-    command: npx
-    args:
-      - -y
-      - "@mcp/tableagent-mcp"
-    timeout: 60000
-    serverInstructions: true
-
-  # JSONMode MCP (structured JSON outputs)
-  jsonmode:
-    command: npx
-    args:
-      - -y
-      - "@mcp/jsonmode-mcp"
-    timeout: 60000
-    serverInstructions: true
-
-  # Retrieval MCP (knowledge base)
-  retrieval:
-    command: npx
-    args:
-      - -y
-      - "@mcp/retrieval-mcp"
-    timeout: 60000
-    serverInstructions: true
-
   # Playwright MCP server
   playwright:
     command: npx
@@ -93,6 +37,61 @@ mcpServers:
       - "@playwright/mcp@latest"
     timeout: 60000
     serverInstructions: true
+
+  # ElevenLabs MCP server
+  elevenlabs:
+    command: docker
+    args:
+      - run
+      - -i
+      - --rm
+      - -e
+      - ELEVENLABS_API_KEY
+      - mcp/elevenlabs
+    env:
+      ELEVENLABS_API_KEY: "${ELEVENLABS_API_KEY}"
+
+  # Chart MCP server (AntV)
+  mcp-server-chart:
+    command: cmd
+    args:
+      - /c
+      - npx
+      - -y
+      - "@antv/mcp-server-chart"
+    timeout: 60000
+    serverInstructions: true
+
+  # CoinGecko MCP server (remote SSE)
+  coingecko_mcp:
+    command: npx
+    args:
+      - mcp-remote
+      - https://mcp.api.coingecko.com/sse
+    timeout: 60000
+    serverInstructions: true
+
+  # Exa MCP server
+  exa:
+    command: npx
+    args:
+      - -y
+      - mcp-remote
+      - "https://mcp.exa.ai/mcp?exaApiKey=${EXA_API_KEY}"
+    timeout: 60000
+    serverInstructions: true
+
+  # OPGG MCP (Linux/macOS)
+  opgg-mcp:
+    command: npx
+    args:
+      - -y
+      - supergateway
+      - --streamableHttp
+      - https://mcp-api.op.gg/mcp
+    timeout: 60000
+    serverInstructions: true
+
 
 endpoints:
   custom:
