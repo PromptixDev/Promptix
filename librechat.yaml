@@ -60,20 +60,19 @@ mcpServers:
     timeout: 60000
     serverInstructions: true
 
-  # ScrapeGraphAI MCP server
-  scrapegraph:
-    command: npx
-    args:
-      - -y
-      - "@smithery/cli@latest"
-      - run
-      - "@ScrapeGraphAI/scrapegraph-mcp"
-      - --config
-      - '{"scrapegraphApiKey":"${SCRAPEGRAPH_API_KEY}"}'
-    timeout: 60000
-    serverInstructions: true
+  # ScrapeGraphAI MCP server is disabled due to missing API key
+  # scrapegraph:
+  #   command: npx
+  #   args:
+  #     - -y
+  #     - "@smithery/cli@latest"
+  #     - run
+  #     - "@ScrapeGraphAI/scrapegraph-mcp"
+  #     - --config
+  #     - '{"scrapegraphApiKey":"${SCRAPEGRAPH_API_KEY}"}'
+  #   timeout: 60000
+  #   serverInstructions: true
 
- 
 endpoints:
   custom:
     - name: "OpenRouter"
