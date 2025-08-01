@@ -40,15 +40,15 @@ mcpServers:
 
   # ElevenLabs MCP server
   elevenlabs:
-    command: uvx
+    command: npx
     args:
       - -y
-      - "elevenlabs-mcp"  # seulement si ce package existe ou tu le crées
+      - "elevenlabs-mcp"
     env:
       ELEVENLABS_API_KEY: "${ELEVENLABS_API_KEY}"
     timeout: 60000
     serverInstructions: true
-  
+
   # RunwayML MCP server
   runwayml:
     command: npx
@@ -59,6 +59,20 @@ mcpServers:
       RUNWAY_API_KEY: "${RUNWAY_API_KEY}"
     timeout: 60000
     serverInstructions: true
+
+  # ScrapeGraphAI MCP server
+  scrapegraph:
+    command: npx
+    args:
+      - -y
+      - "@smithery/cli@latest"
+      - run
+      - "@ScrapeGraphAI/scrapegraph-mcp"
+      - --config
+      - '{"scrapegraphApiKey":"${SCRAPEGRAPH_API_KEY}"}'
+    timeout: 60000
+    serverInstructions: true
+
  
 endpoints:
   custom:
