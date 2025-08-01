@@ -9,34 +9,6 @@ interface:
 
 # MCP Servers Configuration
 mcpServers:
-  # Context7 server
-  context7:
-    command: npx
-    args:
-      - -y
-      - "@upstash/context7-mcp"
-    timeout: 60000
-    serverInstructions: true
-
-  # Firecrawl MCP server
-  firecrawl:
-    command: npx
-    args:
-      - -y
-      - "firecrawl-mcp"
-    env:
-      FIRECRAWL_API_KEY: "${FIRECRAWL_API_KEY}"
-    timeout: 60000
-    serverInstructions: true
-
-  # Playwright MCP server
-  playwright:
-    command: npx
-    args:
-      - -y
-      - "@playwright/mcp@latest"
-    timeout: 60000
-    serverInstructions: true
 
   # ElevenLabs MCP server
   elevenlabs:
@@ -61,17 +33,17 @@ mcpServers:
     serverInstructions: true
 
   # ScrapeGraphAI MCP server is disabled due to missing API key
-  # scrapegraph:
-  #   command: npx
-  #   args:
-  #     - -y
-  #     - "@smithery/cli@latest"
-  #     - run
-  #     - "@ScrapeGraphAI/scrapegraph-mcp"
-  #     - --config
-  #     - '{"scrapegraphApiKey":"${SCRAPEGRAPH_API_KEY}"}'
-  #   timeout: 60000
-  #   serverInstructions: true
+  scrapegraph:
+    command: npx
+   args:
+     - -y
+     - "@smithery/cli@latest"
+     - run
+     - "@ScrapeGraphAI/scrapegraph-mcp"
+     - --config
+     - '{"scrapegraphApiKey":"${SCRAPEGRAPH_API_KEY}"}'
+   timeout: 60000
+   serverInstructions: true
 
 endpoints:
   custom:
