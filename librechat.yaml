@@ -38,40 +38,7 @@ mcpServers:
     timeout: 60000
     serverInstructions: true
 
-  # ElevenLabs MCP server
-  elevenlabs:
-    command: npx
-    args:
-      - -y
-      - "elevenlabs-mcp"
-    env:
-      ELEVENLABS_API_KEY: "${ELEVENLABS_API_KEY}"
-    timeout: 60000
-    serverInstructions: true
 
-  # RunwayML MCP server
-  runwayml:
-    command: npx
-    args:
-      - -y
-      - "runwayml-mcp"
-    env:
-      RUNWAY_API_KEY: "${RUNWAY_API_KEY}"
-    timeout: 60000
-    serverInstructions: true
-
-  # ScrapeGraphAI MCP server is disabled due to missing API key
-  scrapegraph:
-    command: npx
-   args:
-     - -y
-     - "@smithery/cli@latest"
-     - run
-     - "@ScrapeGraphAI/scrapegraph-mcp"
-     - --config
-     - '{"scrapegraphApiKey":"${SCRAPEGRAPH_API_KEY}"}'
-   timeout: 60000
-   serverInstructions: true
 
 endpoints:
   custom:
