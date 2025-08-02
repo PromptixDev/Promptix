@@ -18,25 +18,12 @@ mcpServers:
     timeout: 60000
     serverInstructions: true
 
-  # Firecrawl MCP server
-  firecrawl:
+  # Web browser automation
+  puppeteer:
     command: npx
     args:
       - -y
-      - "firecrawl-mcp"
-    env:
-      FIRECRAWL_API_KEY: "${FIRECRAWL_API_KEY}"
-    timeout: 60000
-    serverInstructions: true
-
-  # Playwright MCP server
-  playwright:
-    command: npx
-    args:
-      - -y
-      - "@playwright/mcp@latest"
-    timeout: 60000
-    serverInstructions: true
+      - "@modelcontextprotocol/server-puppeteer"
 
 
 
